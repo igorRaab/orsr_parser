@@ -19,7 +19,7 @@ st.markdown("""
 # --- BOČNÝ PANEL (Konfigurácia) ---
 with st.sidebar:
     st.title("⚙️ Nastavenia")
-    api_key = st.text_input("Vložte Gemini API Kľúč", type="password", value="AIzaSyDpf4KN0iIFljYwWHJRbevclIzQk6NFFtQ")
+    api_key = st.text_input("Vložte Gemini API Kľúč", type="password", value="")
     model_choice = st.selectbox("Model", ["gemini-3-flash-preview", "gemini-2.0-flash"])
     st.info("Tento nástroj analyzuje predmety činnosti z ORSR pomocou AI a priraďuje im rizikový profil.")
 
