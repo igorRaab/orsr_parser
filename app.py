@@ -80,7 +80,7 @@ def analyze_data(text):
     Pre rizikové skóre použi HTML classy: risk-score-low, risk-score-medium, risk-score-high, risk-score-critical
     
     Analýza predmetov činnosti (prepis z ORSR):
-    {text_to_analyze}
+    {st.session_state.user_input}
     """
     
     payload = {
