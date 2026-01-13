@@ -55,15 +55,24 @@ def analyze_data(text):
     headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
     
     prompt = f"""
-   Pôsob ako elitný senior underwriter špecializovaný na poistenie všeobecnej zodpovednosti podnikateľov v slovenskom poistnom, právnom a trhovom prostredí s viac ako 20 rokmi praxe. Máš hlboké znalosti slovenských poistných podmienok, výluk, štandardov likvidácie škôd, špecifík maklérskej praxe a komerčných prevádzkových rizík. Tvojou úlohou je: 1) vykonať hĺbkovú underwriting analýzu spoločnosti, 2) detailne vyhodnotiť všetky jej predmety činností, 3) vrátiť výstup výhradne v štruktúrovanom HTML definovanom nižšie.
+    Pôsob ako elitný senior underwriter špecializovaný na poistenie všeobecnej zodpovednosti podnikateľov v slovenskom poistnom, právnom a trhovom prostredí s viac ako 20 rokmi praxe.
+    Máš hlboké znalosti slovenských poistných podmienok, výluk, štandardov likvidácie škôd, špecifík maklérskej praxe a komerčných prevádzkových rizík. 
+    Tvojou úlohou je detailne vyhodnotiť všetky jej predmety činností, 3) vrátiť výstup výhradne v štruktúrovanom HTML formáte definovanom nižšie.
+    
+    Pravidlá analýzy: Pre každý jednotlivý predmet podnikania vyhodnoť samostatne podľa nasledujúcich polí:
+    1. Činnosť (pôvodný text).
+    2. Rizikový Rating (0–100).
+        Stupnica:       0–25 nízke riziko, 
+                        26–50 stredné riziko, 
+                        51–75 vysoké riziko, 
+                        76–100 kritické riziko. 
+    3. Kľúčové poistné nebezpečenstvo (stručne, fakticky). 
+    4. Typ rizika (vyber jeden: Premises / Operations / Product / Professional / Environmental / Contractual / Property Damage to Third Party / Bodily Injury / Financial Loss). 
+    5. Red Flag (ÁNO/NIE; ÁNO = trhovo problematické, často vylúčené alebo vyžaduje dotazník/limit). 
+    6. Komentár underwritera (1–3 vety so stručným zdôvodnením ratingu a business reality, bez hypotetických príkladov).
+    
+    Formát výstupu: Vráť výstup ako formátovanú HTML tabuľku.
 
-Pravidlá analýzy: Pre každý jednotlivý predmet podnikania vyhodnoť samostatne podľa nasledujúcich polí: 1. Činnosť (pôvodný text). 2. Rizikový Rating (0–100). Stupnica: 0–25 nízke riziko, 26–50 stredné riziko, 51–75 vysoké riziko, 76–100 kritické riziko. 3. Kľúčové poistné nebezpečenstvo (stručne, fakticky). 4. Typ rizika (vyber jeden: Premises / Operations / Product / Professional / Environmental / Contractual / Property Damage to Third Party / Bodily Injury / Financial Loss). 5. Red Flag (ÁNO/NIE; ÁNO = trhovo problematické, často vylúčené alebo vyžaduje dotazník/limit). 6. Komentár underwritera (1–3 vety so stručným zdôvodnením ratingu a business reality, bez hypotetických príkladov).
-
-Formát výstupu: Vráť výstup výhradne ako čistý HTML (bez html/head/body tagov). Nepoužívaj žiadny markdown. Pre rizikové skóre používaj CSS classy: risk-score-low, risk-score-medium, risk-score-high, risk-score-critical. Klasifikácia: 0–25 risk-score-low, 26–50 risk-score-medium, 51–75 risk-score-high, 76–100 risk-score-critical.
-
-Záverečná časť po analýze jednotlivých činností musí obsahovať sekcie: Celkové Skóre Rizika Firmy (priemer ratingov + slovná interpretácia). Kritické Klauzuly & Výluky (len relevantné pre profil firmy podľa slovenskej praxe; nepísať zbytočné položky). Cross-Sell Tipy (navrhni doplnkové poistné + stručné odôvodnenie potreby). Doplňujúce Otázky pre Klienta (konkrétne otázky pre makléra/underwritera; nesmú byť generické).
-
-Výstupné pravidlá: 1. Výstup musí byť vždy čistý HTML. 2. NESMIE obsahovať žiadne vysvetlenia, meta-komentár, markdown ani text mimo špecifikovaného formátu. 3. NESMIE dopĺňať činnosti, ktoré v inpute neexistujú. 4. NEHALUCINUJ (ak je činnosť nejasná, posudzuj konzervatívne podľa slovenskej praxe). 5. Odpovedz striktne na základe inputu.
     Analýza predmetov činnosti (prepis z ORSR):
     {st.session_state.user_input}
     """
