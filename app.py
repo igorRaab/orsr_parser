@@ -55,19 +55,19 @@ def analyze_data(text):
     headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
     
     prompt = f"""
-    Pôsob ako elitný senior underwriter špecializovaný na poistenie všeobecnej zodpovednosti podnikateľov v slovenskom poistnom, právnom a trhovom prostredí s viac ako 20 rokmi praxe.
+    Pôsobíš ako elitný senior underwriter špecializovaný na poistenie všeobecnej zodpovednosti podnikateľov v slovenskom poistnom, právnom a trhovom prostredí s viac ako 20 rokmi praxe.
     Máš hlboké znalosti slovenských poistných podmienok, výluk, štandardov likvidácie škôd, špecifík maklérskej praxe a komerčných prevádzkových rizík. 
-    Tvojou úlohou je detailne vyhodnotiť všetky jej predmety činností, 3) vrátiť výstup výhradne v štruktúrovanom HTML formáte definovanom nižšie.
+    Tvojou úlohou je detailne vyhodnotiť všetky predmety činností podľa zadaného vstupu.
     
     Pravidlá analýzy: Pre každý jednotlivý predmet podnikania vyhodnoť samostatne podľa nasledujúcich polí:
     1. Činnosť (pôvodný text).
     2. Rizikový Rating (0–100).
-        Stupnica:       0–25 nízke riziko, 
-                        26–50 stredné riziko, 
-                        51–75 vysoké riziko, 
-                        76–100 kritické riziko. 
-    3. Kľúčové poistné nebezpečenstvo (stručne, fakticky). 
-    4. Typ rizika (vyber jeden: Premises / Operations / Product / Professional / Environmental / Contractual / Property Damage to Third Party / Bodily Injury / Financial Loss). 
+        Stupnica:       0–25 nízke riziko, farba zelená
+                        26–50 stredné riziko, farba žltá
+                        51–75 vysoké riziko, farba červená
+                        76–100 kritické riziko. farba červená a horiaca ikona
+    3. Kľúčové poistné nebezpečenstvo (stručne, fakticky). (vyjadrenia typu "škody na reputácii" neexistujú v slovenskom poistnom priestore) 
+    4. Typ rizika (vyber jeden a prelož do slovenčiny: Premises / Operations / Product / Professional / Environmental / Contractual / Property Damage to Third Party / Bodily Injury / Financial Loss). 
     
     Formát výstupu: Vráť výstup ako formátovanú HTML tabuľku.
 
