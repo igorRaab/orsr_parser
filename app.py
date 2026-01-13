@@ -85,5 +85,103 @@ def run_master_analysis(text_data, ico=None):
     headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
     
     # Implementácia "Najlepšieho promptu na svete"
-    master_prompt = f""
-    Si elitný Chief Underwriting Officer (CUO) s 20-ročnou
+    master_prompt = f"""
+    Si elitný Chief Underwriting Officer (CUO) s 20-ročnou praxou v korporátnom poistení zodpovednosti (General Liability) na slovenskom trhu. 
+    Tvojím cieľom je vytvoriť technicky dokonalý risk report pre firmu (IČO: {ico if ico else 'N/A'}).
+
+    Dáta z ORSR: {text_data}
+
+    TVOJA METODIKA:
+    1. DEKONŠTRUKCIA: Identifikuj každú činnosť a priraď jej presný NACE rev. 2 kód.
+    2. ANALÝZA EXPOZÍCIE: Posúď závažnosť možných škôd (zdravie, majetok, čisté finančné škody).
+    3. SYNERGIA RIZIKA: Vyhodnoť, či kombinácia činností nezvyšuje celkový rizikový profil.
+    4. KLASIFIKÁCIA: Použi striktnú terminológiu (Zodpovednosť za vadu, Regresy, Prevádzková činnosť).
+
+    VÝSTUP (Iba čisté HTML):
+    <div class="report-container">
+      <table class="risk-table">
+        <thead>
+          <tr>
+            <th>Predmet činnosti</th>
+            <th>NACE</th>
+            <th>Rizikové skóre (0-100)</th>
+            <th>Kľúčové nebezpečenstvo</th>
+            <th>Red Flag</th>
+          </tr>
+        </thead>
+        <tbody>
+          </tbody>
+      </table>
+
+      <div class="analysis-summary">
+        <h3>📊 Celkové technické zhodnotenie</h3>
+        <p><strong>Vypočítaný Risk Index:</strong> [Priemer vážený rizikovosťou] / 100</p>
+        <h4>📋 Odporúčania pre upisovateľa:</h4>
+        <ul>
+          <li><strong>Limit plnenia:</strong> Odporúčaný CSL v EUR.</li>
+          <li><strong>Povinné doložky:</strong> Technické názvy doložiek pre SR trh.</li>
+          <li><strong>Vylúčené činnosti:</strong> Čo nepoistiť.</li>
+        </ul>
+        <h4>🔍 Due Diligence (Otázky pre makléra):</h4>
+        <p>3-5 cielených otázok na odhalenie skrytého rizika.</p>
+        <h4>💡 Cross-sell potenciál:</h4>
+        <p>Potreba pre D&O, Enviro alebo Kyber.</p>
+      </div>
+    </div>
+    """
+    
+    payload = {
+        "model": MODEL_TO_USE,
+        "messages": [
+            {"role": "system", "content": "Si expertný AI Underwriter. Odpovedáš iba čistým HTML bez markdown značiek."},
+            {"role": "user", "content": master_prompt}
+        ],
+        "temperature": 0.1
+    }
+    
+    try:
+        response = requests.post(url, headers=headers, json=payload)
+        if response.status_code == 200:
+            return response.json()['choices'][0]['message']['content'].replace("```html", "").replace("```", "").strip()
+        else:
+            st.error(f"Chyba API ({response.status_code}): {response.text}")
+            return None
+    except Exception as e:
+        st.error(f"Kritická chyba: {e}")
+        return None
+
+# --- 5. HLAVNÁ ČASŤ APLIKÁCIE ---
+col_left, col_right = st.columns(2)
+
+with col_left:
+    st.markdown("#### 🆔 Identifikácia subjektu")
+    ico_input = st.text_input("IČO firmy:", placeholder="35763469")
+
+with col_right:
+    st.markdown("#### 📝 Manuálny zoznam činností")
+    manual_input = st.text_area("Vložte text z ORSR:", placeholder="Prilepte predmety činnosti...", height=68)
+
+if st.button("🔍 GENEROVAŤ EXPERTNÝ RISK REPORT", use_container_width=True):
+    # Určenie vstupu
+    final_input = f"Vyhľadaj a analyzuj firmu s IČO {ico_input}" if ico_input else manual_input
+    
+    if final_input:
+        with st.spinner("🚀 Prebieha hĺbková analýza rizikových faktorov..."):
+            html_report = run_master_analysis(final_input, ico_input)
+            if html_report:
+                st.markdown("---")
+                st.html(html_report)
+                
+                # Možnosť stiahnutia
+                st.download_button(
+                    label="📥 Exportovať Report pre Underwritingový spis",
+                    data=html_report,
+                    file_name=f"Risk_Report_{ico_input if ico_input else 'manual'}.html",
+                    mime="text/html",
+                    use_container_width=True
+                )
+    else:
+        st.warning("Zadajte IČO alebo prilepte text na analýzu.")
+
+st.markdown("---")
+st.caption("Nástroj využíva Llama 3.3 (State-of-the-art LLM) na analýzu neštruktúrovaných dát z verejných registrov SR.")
