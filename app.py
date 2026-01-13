@@ -56,9 +56,7 @@ def analyze_data(text):
     
     prompt = f"""
     Si elitný senior underwriter špecializovaný na poistenie všeobecnej zodpovednosti podnikateľov v slovenskom právnom prostredí.
-    Tvojou úlohou je vykonať hĺbkovú analýzu predmetov činnosti firmy z Obchodného registra SR.
-
-    Ak je k dispozícii IČO: {company_ico if company_ico else 'N/A'}, použij svoju internú databázu znalostí na kontextualizáciu firmy (vek, odvetvie, reputácia, ak je známa).
+    Tvojou úlohou je vykonať hĺbkovú analýzu predmetov činnosti firmy z Obchodného registra SR.  
     
     Pre KAŽDÝ predmet činnosti:
     1.  **Činnosť:** Pôvodný text.
