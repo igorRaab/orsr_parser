@@ -68,10 +68,13 @@ def analyze_data(text):
     3.  **Kľúčové poistné nebezpečenstvo:** Stručný popis hlavného rizika pre poisťovňu (napr. škody na majetku tretích osôb, škody na zdraví tretích osôb, finančná strata, škoda na veciach prevzatých, škody na cudzích hnuteľných veciach a podobne.).
     4.  **Red Flag:** Áno/Nie (ak činnosť kazuje znaky extrémneho rizika pre poisťovňu alebo špeciálny dotazník, je zvyčajne vylúčená alebo vyžaduje extrémne vysoký limit).
 
-    Následne pod tabuľku pridaj sekciu **'Underwritingové Odporúčania & Tipy pre Makléra'**, ktorá bude obsahovať:
+    Následne pod tabuľku pridaj sekcie **'Underwritingové Odporúčania & Tipy pre Makléra'**, ktorá bude obsahovať samostatné formátované odstavce:
     * **Celkové Skóre Rizika Firmy:** Priemer rizikových ratingov všetkých činností (0-100).
+    
     * **Kritické Doložky a Výluky:** Zoznam doložiek (napr. doložka o subdodávateľoch, doložka o prácach vo výškach) a výluk, ktoré sú pre tento profil štandradné a kľúčové v slovenskej poistnej praxi.
-    * **Cross-Sell Tipy:** Návrhy na dodatočné poistenia, ak s dôvodom prečo odporúčaš tieto poistenia
+    
+    * **Cross-Sell Tipy:** Návrhy na dodatočné poistenia, aj s relevantným dôvodom prečo odporúčaš tieto poistenia
+    
     * **Doplňujúce Otázky pre Klienta:** Konkrétne otázky, ktoré by mal maklér položiť klientovi. Otázky musia byť konkrétne, špecifické a musia vychádzať zo spracovanej analýzy.
 
     ODPOVEĎ VRÁŤ VŽDY A VÝHRADNE AKO ČISTÝ HTML KÓD.
