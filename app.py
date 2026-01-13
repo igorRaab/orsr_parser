@@ -66,7 +66,7 @@ def analyze_data(text):
                         26–50 stredné riziko,
                         51–75 vysoké riziko,
                         76–100 kritické riziko.
-    3. Kľúčové poistné nebezpečenstvo (stručne, fakticky). (vyjadrenia typu "škody na reputácii" neexistujú v slovenskom poistnom priestore) 
+    3. Kľúčové poistné nebezpečenstvo (stručne, fakticky). (vyjadrenia typu "škody na reputácii" neexistujú v slovenskom poistnom priestore, nepoužívaj ich) 
     4. Typ rizika (vyber jeden a prelož do slovenčiny: Premises / Operations / Product / Professional / Environmental / Contractual / Property Damage to Third Party / Bodily Injury / Financial Loss). 
     
     Formát výstupu: Vráť výstup ako formátovanú HTML tabuľku.
