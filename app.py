@@ -85,5 +85,5 @@ def run_master_analysis(text_data, ico=None):
     headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
     
     # Implementácia "Najlepšieho promptu na svete"
-    master_prompt = f"""
+    master_prompt = f""
     Si elitný Chief Underwriting Officer (CUO) s 20-ročnou
