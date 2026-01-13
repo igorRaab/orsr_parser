@@ -114,3 +114,6 @@ if st.button("🚀 Spustiť analýzu", use_container_width=True):
         st.warning("Prosím zadajte IČO alebo text.")
 
 st.caption("© 2026 Underwriting Showcase | Powered by Groq & Llama 3")
+# --- PÄTIČKA ---
+st.markdown("---")
+st.markdown("<p style='text-align: center; opacity: 0.6;'>Nástroj slúži na podporu rozhodovania. Finálny verdikt patrí pod kompetenciu upisovateľa.</p>", unsafe_allow_html=True)
