@@ -68,8 +68,6 @@ def analyze_data(text):
                         76–100 kritické riziko. 
     3. Kľúčové poistné nebezpečenstvo (stručne, fakticky). 
     4. Typ rizika (vyber jeden: Premises / Operations / Product / Professional / Environmental / Contractual / Property Damage to Third Party / Bodily Injury / Financial Loss). 
-    5. Red Flag (ÁNO/NIE; ÁNO = trhovo problematické, často vylúčené alebo vyžaduje dotazník/limit). 
-    6. Komentár underwritera (1–3 vety so stručným zdôvodnením ratingu a business reality, bez hypotetických príkladov).
     
     Formát výstupu: Vráť výstup ako formátovanú HTML tabuľku.
 
