@@ -71,11 +71,11 @@ def analyze_data(text):
     Následne pod tabuľku pridaj sekcie **'Underwritingové Odporúčania & Tipy pre Makléra'**, ktorá bude obsahovať samostatné formátované odstavce:
     * **Celkové Skóre Rizika Firmy:** Priemer rizikových ratingov všetkých činností (0-100).
     
-    * **Kritické Doložky a Výluky:** Zoznam doložiek (napr. doložka o subdodávateľoch, doložka o prácach vo výškach) a výluk, ktoré sú pre tento profil štandradné a kľúčové v slovenskej poistnej praxi.
+    * **Kritické klauzuly a Výluky:** Zoznam klauzúl (najčastejšie používané v slovenskej poisťovacej praxi sú: Veci vnesené a odložené, Cudzie hnuteľné veci, zodpovednosť za škodu spôsobenú vadným výrobkom, poškodenie životného prostredia, environmentálna zodpovednosť, vlastníctvo nehnuteľnosti, čisté finančné škody) a výluk, ktoré sú pre tento profil štandradné a kľúčové v slovenskej poistnej praxi.
     
-    * **Cross-Sell Tipy:** Návrhy na dodatočné poistenia, aj s relevantným dôvodom prečo odporúčaš tieto poistenia
+    * **Cross-Sell Tipy:** Návrhy na dodatočné poistenia (napríklad profesná zodpovednosť vyťadovaná zákonom pri niektorých činnostiach, environmentálna zodpovednosť vyťadovaná zákonom pri niektorých činnostiach), aj s relevantným dôvodom prečo odporúčaš tieto poistenia
     
-    * **Doplňujúce Otázky pre Klienta:** Konkrétne otázky, ktoré by mal maklér položiť klientovi. Otázky musia byť konkrétne, špecifické a musia vychádzať zo spracovanej analýzy.
+    * **Doplňujúce Otázky pre Klienta:** Konkrétne otázky, ktoré by mal maklér položiť klientovi, aby underwriter lepšie pochopil riziko ako také. Otázky musia byť konkrétne, špecifické a musia vychádzať zo spracovanej analýzy.
 
     ODPOVEĎ VRÁŤ VŽDY A VÝHRADNE AKO ČISTÝ HTML KÓD.
     Pre rizikové skóre použi HTML classy: risk-score-low, risk-score-medium, risk-score-high, risk-score-critical
