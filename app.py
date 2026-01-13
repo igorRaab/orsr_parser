@@ -36,27 +36,40 @@ def analyze_with_groq(text_data, company_ico=None):
         return "<p style='color:red;'>Chyba: API kľúč nie je nastavený v Secrets!</p>"
     
     url = "https://api.groq.com/openai/v1/chat/completions"
-    headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
+    headers = {
+        "Authorization": f"Bearer {GROQ_API_KEY}",
+        "Content-Type": "application/json"
+    }
+    
+    # Použijeme najnovší model 2026, ktorý je teraz v Groq zadarmo a stabilný
+    MODEL_TO_USE = "llama-3.3-70b-versatile" 
     
     prompt = f"""
-    Si senior underwriter. Analyzuj predmety činnosti pre IČO {company_ico if company_ico else 'manuálny vstup'}.
+    Si senior underwriter. Analyzuj predmety činnosti firmy (IČO: {company_ico if company_ico else 'manuálny vstup'}).
     Vráť HTML TABUĽKU (Činnosť, NACE, Riziko 1-100, Red Flag) a pod to ODBORNÉ ODPORÚČANIA.
-    Používaj poistnú terminológiu (výluky, doložky, regres).
     Dáta: {text_data}
     """
     
+    # Payload musí byť presne podľa OpenAI štandardu
     payload = {
-        "model": MODEL_NAME,
-        "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0.2
+        "model": MODEL_TO_USE,
+        "messages": [
+            {"role": "system", "content": "Odpovedaj výhradne v HTML kóde bez markdown značiek."},
+            {"role": "user", "content": prompt}
+        ],
+        "temperature": 0.1  # Zníženie na 0.1 pre maximálnu stabilitu
     }
     
     try:
         r = requests.post(url, headers=headers, json=payload)
-        r.raise_for_status()
+        
+        # Ak nastane chyba 400, vypíšeme presný dôvod od Groq
+        if r.status_code != 200:
+            return f"<p style='color:red;'>API Error {r.status_code}: {r.json().get('error', {}).get('message', 'Neznáma chyba')}</p>"
+            
         return r.json()['choices'][0]['message']['content'].replace("```html", "").replace("```", "")
     except Exception as e:
-        return f"<p style='color:red;'>Chyba API: {str(e)}</p>"
+        return f"<p style='color:red;'>Chyba spojenia: {str(e)}</p>"
 
 # --- 4. UI ROZHRANIE ---
 col1, col2 = st.columns(2)
