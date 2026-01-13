@@ -45,34 +45,66 @@ def analyze_with_groq(text_data, company_ico=None):
     MODEL_TO_USE = "llama-3.3-70b-versatile" 
     
     prompt = f"""
-   Si elitný senior underwriter špecializovaný na poistenie všeobecnej zodpovednosti podnikateľov v slovenskom právnom prostredí.
-    Tvojou úlohou je vykonať hĺbkovú analýzu predmetov činnosti firmy z Obchodného registra SR.
+   Si elitný Chief Underwriting Officer (CUO) s 20-ročnou praxou v korporátnom poistení zodpovednosti (General Liability) na slovenskom trhu. Tvojím cieľom je vytvoriť technicky dokonalý risk report, ktorý slúži ako podklad pre upísanie rizika.
 
-    Ak je k dispozícii IČO: {company_ico if company_ico else 'N/A'}, použij svoju internú databázu znalostí na kontextualizáciu firmy (vek, odvetvie, reputácia, ak je známa).
+KONTEXT: 
+Analyzuješ firmu s IČO: {ico if ico else 'N/A'}. 
+Dáta z ORSR: {text_data}
+
+TVOJA METODIKA (Postupuj podľa týchto krokov):
+1. DEKONŠTRUKCIA: Identifikuj každú činnosť a priraď jej presný NACE rev. 2 kód podľa štatistickej klasifikácie SR.
+2. ANALÝZA EXPOZÍCIE: Posúď frekvenciu a závažnosť možných škôd (zdravie, majetok, čisté finančné škody).
+3. SYNERGIA RIZIKA: Ak má firma v ORSR protichodné činnosti (napr. administratíva vs. vŕtanie studní), celkové riziko sa nezemeruje, ale stúpa kvôli nejasnému zameraniu.
+4. KLASIFIKÁCIA: Použi striktnú terminológiu slovenského poistného trhu (Zodpovednosť za vadu výrobku, Zodpovednosť za škodu z prevádzkovej činnosti, Regresy Sociálnej poisťovne).
+
+VÝSTUPNÝ FORMÁT (Iba čisté HTML bez úvodných rečí):
+
+<div class="report-container">
+  <h2>🛡️ Underwriting Risk Report: {ico if ico else 'Manuálna analýza'}</h2>
+  
+  <table class="risk-table">
+    <thead>
+      <tr>
+        <th>Predmet činnosti</th>
+        <th>NACE</th>
+        <th>Rizikové skóre (0-100)</th>
+        <th>Kľúčové nebezpečenstvo</th>
+        <th>Red Flag</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>[Pôvodný text]</td>
+        <td>[Kód - Názov]</td>
+        <td class="[class]"> [Body] </td>
+        <td>[Technický popis expozície]</td>
+        <td>[⚠️ ÁNO / NIE]</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="analysis-summary">
+    <h3>📊 Celkové technické zhodnotenie</h3>
+    <p><strong>Vypočítaný Risk Index:</strong> [Priemer vážený rizikovosťou] / 100</p>
     
-    Pre KAŽDÝ predmet činnosti:
-    1.  **Činnosť:** Pôvodný text.
-    2.  **Odhadovaný NACE kód:** 4-miestny štatistický kód (napr. 43.12 - Prípravné práce pre stavby).
-    3.  **Rizikový Rating (0-100):** Číselná hodnota, kde 0 je minimálne riziko a 100 je extrémne kritické.
-        * 0-25: Nízke
-        * 26-50: Stredné
-        * 51-75: Vysoké
-        * 76-100: Kritické
-    4.  **Kľúčové poistné nebezpečenstvo:** Stručný popis hlavného rizika pre poisťovňu (napr. regresné nároky, škody na zdraví tretích osôb, finančná strata).
-    5.  **Red Flag:** Áno/Nie (ak činnosť vyžaduje špeciálny dotazník, je zvyčajne vylúčená alebo vyžaduje extrémne vysoký limit).
+    <h4>📋 Odporúčania pre upisovateľa:</h4>
+    <ul>
+      <li><strong>Limit plnenia:</strong> Odporúčaný Combined Single Limit (CSL) v EUR vzhľadom na charakter činnosti.</li>
+      <li><strong>Povinné doložky:</strong> (napr. Doložka o prácach na cudzích veciach, Čisté finančné škody, Nároky z titulu porušenia práv duševného vlastníctva).</li>
+      <li><strong>Vylúčené činnosti:</strong> Ktoré činnosti z ORSR sa nesmú poistiť v štandardnom krytí.</li>
+    </ul>
 
-    Následne pod tabuľku pridaj sekciu **'Underwritingové Odporúčania & Tipy pre Makléra'**, ktorá bude obsahovať:
-    * **Celkové Skóre Rizika Firmy:** Priemer rizikových ratingov všetkých činností (0-100).
-    * **Odporúčané Limity Plnenia:** Návrh minimálnych a optimálnych limitov pre poistenie zodpovednosti.
-    * **Kritické Doložky a Výluky:** Zoznam doložiek (napr. doložka o subdodávateľoch, doložka o prácach vo výškach) a výluk, ktoré sú pre tento profil kľúčové v slovenskej praxi.
-    * **Cross-Sell Tipy:** Návrhy na dodatočné poistenia (napr. poistenie kybernetických rizík, poistenie majetku, D&O).
-    * **Doplňujúce Otázky pre Klienta:** Konkrétne otázky, ktoré by mal maklér položiť klientovi.
-
-    ODPOVEĎ VRÁŤ VŽDY A VÝHRADNE AKO ČISTÝ HTML KÓD.
-    Pre rizikové skóre použi HTML classy: risk-score-low, risk-score-medium, risk-score-high, risk-score-critical
+    <h4>🔍 Due Diligence (Otázky pre makléra):</h4>
+    <p>Polož 3-5 cielených otázok, ktoré odhalia skutočný rozsah rizika (napr. subdodávatelia v %, práce v zahraničí, obrat v USA/Kanade).</p>
     
-    Analýza predmetov činnosti (prepis z ORSR):
-    {text_data}
+    <h4>💡 Cross-sell potenciál:</h4>
+    <p>Identifikuj potrebu pre D&O, Enviro-zodpovednosť alebo Professional Indemnity na základe zapísaných činností.</p>
+  </div>
+</div>
+
+STRIKTNÉ PRAVIDLÁ PRE HTML:
+- Pre rizikové skóre použi CLASSY: risk-score-low (0-25), risk-score-medium (26-50), risk-score-high (51-75), risk-score-critical (76-100).
+- Nepoužívaj ```html značky, vráť len kód.
     """
     
     # Payload musí byť presne podľa OpenAI štandardu
