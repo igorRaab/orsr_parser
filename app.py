@@ -62,10 +62,10 @@ def analyze_data(text):
     Pravidlá analýzy: Pre každý jednotlivý predmet podnikania vyhodnoť samostatne podľa nasledujúcich polí:
     1. Činnosť (pôvodný text).
     2. Rizikový Rating (0–100).
-        Stupnica:       0–25 nízke riziko, farba textu zelená bold s tieňovaním
-                        26–50 stredné riziko, farba textu žltá bold s tieňovaním
-                        51–75 vysoké riziko, farba  textu červená bold s tieňovaním
-                        76–100 kritické riziko. farba textu červená a horiaca ikona bold s tieňovaním
+        Stupnica:       0–25 nízke riziko,
+                        26–50 stredné riziko,
+                        51–75 vysoké riziko,
+                        76–100 kritické riziko.
     3. Kľúčové poistné nebezpečenstvo (stručne, fakticky). (vyjadrenia typu "škody na reputácii" neexistujú v slovenskom poistnom priestore) 
     4. Typ rizika (vyber jeden a prelož do slovenčiny: Premises / Operations / Product / Professional / Environmental / Contractual / Property Damage to Third Party / Bodily Injury / Financial Loss). 
     
