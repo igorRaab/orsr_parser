@@ -63,9 +63,10 @@ def analyze_data(text):
     # Prompt s doplnením interného zoznamu
     prompt = f"""
 Pôsobíš ako elitný senior underwriter špecializovaný na poistenie všeobecnej zodpovednosti podnikateľov v slovenskom poistnom, právnom a trhovom prostredí s viac ako 20 rokmi praxe.
-Máme interný referenčný zoznam činností s rizikovými triedami, ktorý odráža naše pohľady na riziko:
 
-{reference_table}
+Máme interný referenčný zoznam činností s rizikovými triedami (ukážka):
+{reference_summary}
+
 
 Tvojou úlohou je detailne vyhodnotiť všetky predmety činností podľa zadaného vstupu.
 Pravidlá analýzy:
@@ -90,11 +91,17 @@ Analýza predmetov činnosti (prepis z ORSR):
         "temperature": 0.1
     }
 
-    try:
-        r = requests.post(url, headers=headers, json=payload)
-        return r.json()['choices'][0]['message']['content'].replace("```html", "").replace("```", "")
-    except:
-        return "Chyba pri generovaní analýzy."
+    
+try:
+    r = requests.post(url, headers=headers, json=payload)
+    response_json = r.json()
+    if 'choices' in response_json and len(response_json['choices']) > 0:
+        return response_json['choices'][0]['message']['content'].replace("```html", "").replace("```", "")
+    else:
+        return f"Chyba API: {response_json}"
+except Exception as e:
+    return f"Chyba pri generovaní analýzy: {e}"
+
 
 # --- 5. UI ---
 # Používame session_state pre input
