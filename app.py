@@ -52,14 +52,15 @@ st.markdown("""
 
 # --- 4. LOGIKA ---
 
-reference_df = pd.read_csv("harok1_cinnosti_rizikove_triedy.csv")  # alebo JSON
+
+# Načítanie interného zoznamu činností (CSV alebo JSON)
+reference_df = pd.read_csv("harok1_cinnosti_rizikove_triedy.csv")  # alebo použite JSON
 reference_table = reference_df.to_dict(orient="records")
 
 def analyze_data(text):
     url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
-    
-    
+ 
 prompt = f"""
 Pôsobíš ako elitný senior underwriter špecializovaný na poistenie všeobecnej zodpovednosti podnikateľov v slovenskom poistnom, právnom a trhovom prostredí s viac ako 20 rokmi praxe.
 Máme interný referenčný zoznam činností s rizikovými triedami, ktorý odráža naše pohľady na riziko:
