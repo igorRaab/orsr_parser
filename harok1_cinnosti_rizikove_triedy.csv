@@ -1,0 +1,241 @@
+Skupina_kod,Skupina,Činnost,Rizikova_trieda
+,,hutnícke a kovové výrobky  - obchod,2
+,,"Zámočníctvo, nástrojárstvo, obrábanie kovov - výroba , obchod",3
+,,"Želieziarský, inštalatérsky a kúrenársky tovar - obchod",2
+,,"Kováčstvo, klampiarstvo, umelecko-remeselné spracovanie kovov",3
+,,Zváranie kovov,4
+,,"Galvanizácia, smaltovanie, povrchové úpravy kovov",4
+,,Zlatníctvo a klenotníctvo,3
+,,"Zbrane a strelivo - výroba, obchod",*
+,,"Kovové výrobky - výroba, oprava",4
+02,"Motorové vozidlá, ostatné dopravné prostriedky, pracovné stroje",Motorové vozidlá - obchod s novými vozidlami,2
+,,Motorové vozidlá - obchod s ojazdenými vozidlami (autobazár),3
+,,"Motorové vozidlá, karosérie, príslušenstvo (okrem pneumatík) - výroba",4
+,,Príslušenstvo motorových vozidiel - obchod,2
+,,"Autoservis, pneuservis, opravovne motorových vozidiel, autoumyvárky",4
+,,"Bicykle, invalidné vozíky, iné nemotorové dopravné prostriedky - výroba",4
+,,"Bicykle, invalidné vozíky, iné nemotorové dopravné prostriedky - obchod, servis",2
+,,"Lode - výroba, obchod",*
+,,"Železničné vozidlá, vleky, lanovky - výroba, montáž",*
+,,"Lietadlá a letecké zariadenia - výroba, obchod",*
+,,"Stroje a zariadenia (priemyselné, pracovné, poľnohospodárske)  - výroba, montáž, opravy",4
+,,"Stroje a zariadenia (priemyselné, pracovné, poľnohospodárske)  - obchod",3
+,,"Výťahy a zdvíhacie zariadenia - výroba, montáž, opravy, revízie",4
+,,Požičovňa a leasing motorových vozidiel a iných dopravných prostriedkov,4
+03,"Zdravotnícke výrobky a prístroje, výrobky jemnej mechaniky",Očná optika,3
+,,"Ortopedické pomôcky - výroba, opravy",4
+,,"Ortopedické pomôcky - obchod, požičovňa",2
+,,"Meracie, skúšobné, navigačné, optické a fotografické prístroje - obchod",2
+,,"Meracie, skúšobné, navigačné, optické a fotografické prístroje - výroba",4
+,,"Hodinárstvo - výroba, opravy, obchod",1
+,,Zdravotnícke a hygienické potreby - výroba,*
+,,Zdravotnícke a hygienické potreby - obchod,2
+,,"Zdravotnícke pomôcky, implantáty, elektroliečebné a elektroterapeutické prístroje",*
+04,Elektrické a plynové stroje a prístroje,Mobilné telefóny a výpočtová technika - výroba,4
+,,"Mobilné telefóny a výpočtová technika - obchod, servis",2
+,,Domáce a kancelárske spotrebiče (okrem mob.telefónov a výpočtovej techniky) - výroba,4
+,,"Domáce a kancelárske spotrebiče (okrem mob.telefónov a výpočtovej techniky) - obchod, opravy",2
+,,"Elektrické prístroje, súčiastky a zariadenia - výroba, obchod, montáž, opravy, revízie",3
+,,Požičovňa elektrických spotrebičov a spotrebnej elektroniky,3
+05,"Sklo, kameň a zeminy, keramika, ťažba","Banícka činnosť, spracovanie kameňa, ťažba uhlia a iných nerastov",*
+,,Umelecko-remeselné spracovanie kameňa,3
+,,"Sklenárske práce, rámovanie, paspartovanie",3
+,,"Sklenený, porcelánový a keramický tovar (vrátane sanitárneho) - výroba",4
+,,"Sklenený, porcelánový a keramický tovar (vrátane sanitárneho) - obchod",2
+06,"Chémia, farmaceutika, kozmetika",Farby a laky - výroba,5
+,,Farby a laky - obchod,3
+,,"Drogéria, parfuméria, kozmetické výrobky - výroba",4
+,,"Drogéria, parfuméria, kozmetické výrobky - obchod",2
+,,Lekárne,3
+,,Chemické látky a tovar - bez výbušnín a pyrotechnického tovaru - výroba,5
+,,Chemické látky a tovar - bez výbušnín a pyrotechnického tovaru - obchod,3
+,,Chemické látky a tovar - vrátane výbušnín a pyrotechnického tovaru,*
+,,"Pohonné hmoty, mazivá, decht, koks a iné palivá - výroba",*
+,,"Čerpacie stanice, plniarne plynu",4
+,,"Lieky, farmaceutické výrobky",4
+07,Potraviny a nápoje,Mlyny,4
+,,Mliekárne,3
+,,Mraziarne,3
+,,Pivovary,4
+,,"Liehovary, destilárne a paliarne alkoholu",4
+,,Alkoholické nápoje - obchod,2
+,,"Víno, nealkoholické nápoje - výroba, obchod",2
+,,Potraviny - obchod,2
+,,Mäso a mäsové výrobky,2
+,,"Ovocie, zelenina - obchod",2
+,,"Pekárstvo, cukrárstvo",2
+,,Ostatné potravinárske výrobky - výroba a spracovanie,3
+08,"Textil, odevy, koža","Textil, odevy, obuv, galantéria - obchod",1
+,,"Textil, odevy, obuv, galantéria  - výroba",3
+,,"Kožené výrobky, kožuchy, kožušiny - obchod",1
+,,"Kožené výrobky, kožuchy, kožušiny - výroba",3
+,,"Čistiarne odevov a textilu, farbenie textilu",2
+,,"Čalunníctvo, oprava a údržba odevov, obuvi a bytového textilu",2
+,,"Koberce, podlahové krytiny",1
+,,Požičovňa odevov a kostýmov,1
+09,Plastické hmoty a guma,Plasty a gumárenský tovar (vrátane pneumatík) - výroba,5
+,,Plasty a gumárenský tovar (vrátane pneumatík) - obchod,1
+10,"Drevo, nábytok, hudobné nástroje","Nábytok (drevený, plastový, iný) - výroba",4
+,,"Nábytok (drevený, plastový, iný) - obchod, oprava",2
+,,"Stolárstvo, tesárstvo, píly, obrábanie dreva",4
+,,"Drevené, korkové, prútené a slamené výrobky",3
+,,Hudobné nástroje - výroba,2
+,,"Hudobné nástroje - obchod, servis",1
+11,"Papier, polygrafia","Papiernický a lepenkový tovar, buničina, vláknina, tapety - výroba",4
+,,"Papiernický a lepenkový tovar, buničina, vláknina, tapety - obchod",2
+,,"Tlačiarne, knihárske a kopírovacie práce, polygrafická výroba",2
+,,"Kníhkupectvo, obchod s novinami, časopisy",1
+,,"Kancelárske a písacie potreby, papierníctvo",1
+02,"Hobby a športové potreby, hračky, neelektrické zariadenia",Športové potreby - výroba,4
+,,"Športové potreby - obchod, servis",1
+,,"Hračky, kočíky, detský tovar - výroba",5
+,,"Hračky, kočíky, detský tovar - obchod",1
+,,Potreby pre domácich majstrov a pomôcky pre hobby,2
+,,Domáce potreby - neelektrické,1
+,,Požičovňa športových potrieb a výstroja,2
+13,"Starožitnosti, umelecké výrobky","Mince, známky a potreby pre zberateľov",1
+,,"Darčekové predmety, suveníry a bižutéria (nazahrňuje zlato, striebro alebo iné drahé kovy)",1
+,,Starožitnosti a umelecké predmety,2
+02,Ostatné výrobky a tovar,Tabakové výrobky - výroba,*
+,,Tabakové výrobky - obchod,1
+,,"Tlakové a plynové zariadenia - výroba, opravy, revízie",5
+,,"Zvukové, audiovizuálne a dátové nosiče",4
+,,Zmiešaný tovar - obchod,1
+,,Obchodné domy a centrá,3
+,,Kvetiny a záhradkárske potreby - obchod,1
+,,"Chovateľské potreby, zvieratá určené pre záujmové chovy - obchod",1
+,,Stánkový predaj,2
+,,"Záložne, bazáry (okrem vozidiel)",2
+,,"Zásielkový predaj, predaj prostrednictvom internetu",2
+15,"Stavebníctvo, stavebniny","Murár, obkladač,omietkár,  podlahár",5
+,,"Pokrývač, inštalatér, kúrenár, kachliar, izolatér",4
+,,"Maliar, natierač, lakovník",3
+,,Elektrikár,4
+,,Požičovňa a leasing  stavebného náradia a pracovných strojov,3
+,,Stavebná firma - vykonávanie stavieb a stavebných prác,5
+,,"Stavebniny, stavebné hmoty - výroba, obchod",2
+,,"Prieskumné vrtné práce, vrty pre studne a tepelné čerpadlá",3
+02,"Poľnohospodárstvo, lesníctvo, rybárstvo, chov zvierat","Poľnohospodárske produkty, plodiny, krmivá a semená - pestovanie, výroba, obchod",3
+,,"Chov zvierat (okrem hospodárskych), výcvik",3
+,,Chov hospodárskych zvierat (živočíšna výroba),3
+,,Chov rýb a vodných živočíchov,3
+,,Lesné hospodárstvo,4
+,,"Ťažba dreva, lesnícke práce",5
+,,"Činnosti a služby pre poľnohospodárstvo, záhradníctvo, rybníkárstvo, lesníctvo a poľovníctvo",4
+17,"Ubytovanie, stravovanie a pohostinstvo","Reštaurácie, pivnice, vinárne, rýchle občerstvenia, kaviarne, cukrárne, cateringové služby",2
+,,"Hotely, penzióny",2
+,,"Ubytovne, internáty, kempy, krátkodobé ubytovanie",4
+,,"Úschovne batožiny, šatne",4
+02,Vlastníctvo / správa nehnuteľností,"Vlastníctvo, prenájom - bytové domy",2
+,,"Vlastníctvo, prenájom - garáže, parkovacie domy",4
+,,"Vlastníctvo, prenájom - rodinné domy",2
+,,"Vlastníctvo, prenájom - budovy určené na výroby a priemysel",4
+,,"vlastníctvo, prednájom - budovy určené pre obchod a skladovanie",4
+,,"vlastníctvo, prenájom - budovy určené pre administratívu a služby",3
+,,"Správa a údržba nehnuteľností (bez vlastníctva a prenájmu), realitná činnosť",3
+,,Nájomca - prevádzka kancelárie,2
+19,"Energetické prevádzky, voda, odpady","Vodovody, kanalizácie, úprava vody",5
+,,Malé vodné elektrárne,4
+,,Fotovoltaické elektrárne,4
+,,Bioplynové a veterné elektrárne,5
+,,"Zberné suroviny, nakladanie s odpadmi (okrem nebezpečných)",*
+,,Nakladanie s nebezpečnými odpadmi,*
+,,Kotolne - výroba a rozvod tepelnej energie,4
+,,Ostatná výroba a rozvod elektrickej energie alebo plynu a ďalších surovín,5
+02,"Kultúra, zábava, umenie, veľtrhy","Divadlá, kiná, kultúrne domy, knižnice",3
+,,"Múzeá, galérie",3
+,,"Hrady, zámky, chrámy, kostoly a iné historické a kultúrne pamiatky",3
+,,"Zoologické a botanické záhrady, prírodné parky",3
+,,"Cirkusy, zábavné parky, lunaparky",5
+,,"Výstavy, veľtrhy, kultúrne akcie - prevádzka",4
+,,"Bowlingové centrá, biliardové herne, minigolf a ostatné zábavné zariadenia",3
+,,Podporné činnosti súvisiace s realizáciou umeleckých výkonov,4
+,,"Herne, kasína, stávkové kancelárie",*
+,,"Ostatná umelecká tvorba (maliarstvo, grafika, literatúra, žurnalistika)",3
+21,"Šport, telovýchova","Športovné haly, štadióny, pretekárske dráhy, telocvične - prevádzka",4
+,,"Kúpaliská, bazény, aquaparky - prevádzka",5
+,,Jazdiarne a jazdecké školy,5
+,,Strelnice a strelecké školy,5
+,,"Športové a telovýchovné služby (vrátane organizácie), trénerská činnosť",4
+28,"Profesijné, vedecké a technické činnosti",Účtovnícke a daňové činnosti a poradenstvo,*
+,,"Poradenská a konzultačná činnosť, spracovanie odborných štúdií a posudkov",*
+,,"Testovanie, meranie, analýzy a kontroly",*
+,,Prevádzkovanie služieb technickej kontroly motorových vozidiel,*
+,,Geologické práce,*
+,,"Odstreľovacie a ohňostrojové práce, pyrotechnický prieskum",*
+,,Zememeračské a kartografické činnosti,*
+,,Projektovanie pozemkových úprav,*
+,,Projektovanie elektrických a strojných zariadení,*
+,,"Spracovanie technických návrhov, grafické a kresliarske práce",*
+,,"Výskum a vývoj v oblasti prírodných, technických a spoločenských vied",*
+,,Poradenstvo a služby v oblasti bezpečnosti a ochrany zdravia pri práci,*
+,,Poradenstvo a služby v oblasti požiarnej ochrany,*
+,,Reštaurovanie budov a umeleckých diel,*
+,,Oceňovanie majetku,*
+,,Projektová činnosť vo výstavbe,*
+,,"Činnosť autorizovaného architekta, inžiniera, technika",*
+,,Činnosť energetického audítora,*
+,,Činnosť insolvenčného správcu,*
+,,Činnosť súdneho znalca,*
+,,"Právne činnosti, výkon advokácie",*
+,,Audítorske činnosti,*
+,,"Návrhárska, dizajnérska, aranžérska činnosť a modeling",3
+23,Informácie a komunikácia,"Reklamná činnosť, prieskum trhu, marketing",4
+,,"Poskytovanie softvéru, služieb a poradenstva v oblasti IT",*
+,,Prekladateľská a tlmočnícka činnosť,*
+,,Poskytovanie telekomunikačných služieb,*
+,,"Vydávanie kníh, periodických publikácií a ostatné vydavateľské činnosti",3
+,,"Zvukové štúdiá, hudobné vydavateľské činnosti",3
+,,"Tvorba televíznych programov, televízne vysielanie, produkcia filmov",4
+,,"Tvorba rozhlasových programov, rozhlasové vysielanie",3
+28,Osobné služby,"Kozmetické služby, kaderníctvo, holičstvo, manikúra, pedikúra",4
+,,Masérske a rehabilitačné služby,4
+,,"Solária, sauny, soľné jaskyne, kryokomory - prevádzka",4
+,,"Tetovanie, piercing, nastreľovanie náušníc",4
+,,"Pohrebná služba, krematórium",3
+,,"Psychologické poradenstvo (osobné, manželské, športové a iné)",*
+,,"Služby pre rodinu a domácnosť, služby osobného charakteru",3
+25,"Administratíva, podporné služby a ďalšie činnosti",Fotografické služby,3
+,,Technické služby,3
+,,"Poisťovne, banky, ostatné peňažné ústavy (leasing, úvery, fondy, finančné trhy)",*
+,,Zmenárne,*
+,,Administratívne činnosti,1
+,,Agentúry sprostredkúvajúce zamestnanie,*
+,,Ochrana majetku a osôb,5
+,,Organizovanie verejných dražieb,*
+,,Služby súkromných detektívov,*
+,,"Archív, vedenie spisovne",*
+,,"Cestovné agentúry, cestovné kancelárie",*
+,,Sprievodcovská činnosť,3
+,,"Špeciálna ochranná dezinfekcia, dezinfekcia a deratizácia",5
+,,Sprostredkovanie obchodu a služieb,*
+,,"Upratovacie služby, čistiace práce",3
+,,"Čistenie komínov, krbov, kachlí, pecí, kotlov",3
+28,"Doprava, preprava, sklady",Letecká doprava,*
+,,Vodná doprava,*
+,,Diaľničná doprava,5
+,,Železničná doprava,*
+,,Taxislužba a prenájom osobných automobilov s vodičom,2
+,,"Prevádzkovanie dráh - lanovka, vlek",5
+,,Zasieľateľstvo a zastupovanie v colnom konaní,*
+,,Poštovné a kuriérske služby,*
+,,"Sťahovacie služby, manipulácia s nákladom",*
+,,"Technické činnosti v doprave, prevádzkovanie nestrážených garáži a parkovísk",4
+,,Balenie tovaru,4
+,,Sklady nehorľavého a nízko horľavého materiálu a tovaru,4
+,,Sklady horľavého materiálu a tovaru,5
+,,"Sklady výbušnín, trhavín a streliva",*
+27,Vzdelávanie,Školy,3
+,,"Škôlky, jasle",3
+,,"Mimoškolská výchova a vzdelávanie, organizovanie kurzov a školení",4
+,,Autoškola,3
+28,Zdravotná a sociálna starostlivosť,"Zariadenie sociálnej starostlivosti, detský domov, domov dôchodcov",4
+,,Veterinárna ambulancia,*
+,,"Zdravotnícke zariadenie - ambulantného typu, ordinácie",*
+,,Zdravotnícke zariadenie - lôžkového typu,*
+29,"Obce, cirkvi, verejná správa, občianske združenia","Obce, mestá",3
+,,"Cirkev, kostoly, fary, kláštory",3
+,,"Občianské združenia, spolky, zväzy, hnutia, kluby, politické strany",1
+,,"Všeobecné činnosti verejnej správy (mimo obce, mesta)",5
+30,Ostatné činnosti inde neuvedené,Ostatné činnosti inde neuvedené,5
+,,Ostatné vysoko rizikové činnosti,5
