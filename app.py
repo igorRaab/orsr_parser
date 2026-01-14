@@ -92,15 +92,15 @@ Analýza predmetov činnosti (prepis z ORSR):
     }
 
     
-try:
-    r = requests.post(url, headers=headers, json=payload)
-    response_json = r.json()
+    try:
+        r = requests.post(url, headers=headers, json=payload)
+        response_json = r.json()
     if 'choices' in response_json and len(response_json['choices']) > 0:
         return response_json['choices'][0]['message']['content'].replace("```html", "").replace("```", "")
     else:
         return f"Chyba API: {response_json}"
-except Exception as e:
-    return f"Chyba pri generovaní analýzy: {e}"
+    except Exception as e:
+        return f"Chyba pri generovaní analýzy: {e}"
 
 
 # --- 5. UI ---
