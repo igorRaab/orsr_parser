@@ -95,7 +95,6 @@ Analýza predmetov činnosti (prepis z ORSR):
         return r.json()['choices'][0]['message']['content'].replace("```html", "").replace("```", "")
     except:
         return "Chyba pri generovaní analýzy."
-``
 
 # --- 5. UI ---
 # Používame session_state pre input
