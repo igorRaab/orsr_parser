@@ -52,10 +52,6 @@ st.markdown("""
 
 # --- 4. LOGIKA ---
 
-
-
-import pandas as pd
-
 # Načítanie interného zoznamu činností (CSV alebo JSON)
 reference_df = pd.read_csv("harok1_cinnosti_rizikove_triedy.csv")  # alebo použite JSON
 reference_table = reference_df.to_dict(orient="records")
