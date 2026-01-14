@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 from fpdf import FPDF
 import base64
+import pandas as pd
 
 # --- 1. KONFIGURÁCIA ---
 st.set_page_config(page_title="Risk Oracle PDF", page_icon="🛡️", layout="wide")
@@ -50,43 +51,52 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # --- 4. LOGIKA ---
+
+reference_df = pd.read_csv("harok1_cinnosti_rizikove_triedy.csv")  # alebo JSON
+reference_table = reference_df.to_dict(orient="records")
+
 def analyze_data(text):
     url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
     
-    prompt = f"""
-    Pôsobíš ako elitný senior underwriter špecializovaný na poistenie všeobecnej zodpovednosti podnikateľov v slovenskom poistnom, právnom a trhovom prostredí s viac ako 20 rokmi praxe.
-    Máš hlboké znalosti slovenských poistných podmienok, výluk, štandardov likvidácie škôd, špecifík maklérskej praxe a komerčných prevádzkových rizík. 
-    Tvojou úlohou je detailne vyhodnotiť všetky predmety činností podľa zadaného vstupu.
     
-    Pravidlá analýzy: Pre každý jednotlivý predmet podnikania vyhodnoť samostatne podľa nasledujúcich polí:
-    1. Činnosť (pôvodný text).
-    2. Rizikový Rating (0–100).
-        Stupnica:       0–25 nízke riziko,
-                        26–50 stredné riziko,
-                        51–75 vysoké riziko,
-                        76–100 kritické riziko.
-    3. Kľúčové poistné nebezpečenstvo (stručne, fakticky). (vyjadrenia typu "škody na reputácii" neexistujú v slovenskom poistnom priestore, nepoužívaj ich) 
-    4. Typ rizika (vyber jeden a prelož do slovenčiny: Premises / Operations / Product / Professional / Environmental / Contractual / Property Damage to Third Party / Bodily Injury / Financial Loss). 
-    
-    Formát výstupu: Vráť výstup ako formátovanú HTML tabuľku.
+prompt = f"""
+Pôsobíš ako elitný senior underwriter špecializovaný na poistenie všeobecnej zodpovednosti podnikateľov v slovenskom poistnom, právnom a trhovom prostredí s viac ako 20 rokmi praxe.
+Máme interný referenčný zoznam činností s rizikovými triedami, ktorý odráža naše pohľady na riziko:
 
-    Analýza predmetov činnosti (prepis z ORSR):
-    {st.session_state.user_input}
-    """
+{reference_table}
+
+Tvojou úlohou je detailne vyhodnotiť všetky predmety činností podľa zadaného vstupu.
+Pravidlá analýzy:
+Pre každý jednotlivý predmet podnikania vyhodnoť samostatne podľa nasledujúcich polí:
+1. Činnosť (pôvodný text).
+2. Rizikový Rating (0–100). Stupnica: 0–25 nízke riziko, 26–50 stredné riziko, 51–75 vysoké riziko, 76–100 kritické riziko.
+3. Kľúčové poistné nebezpečenstvo (stručne, fakticky).
+4. Typ rizika (vyber jeden a prelož do slovenčiny: Premises / Operations / Product / Professional / Environmental / Contractual / Property Damage to Third Party / Bodily Injury / Financial Loss).
+
+Formát výstupu: Vráť výstup ako formátovanú HTML tabuľku.
+
+Analýza predmetov činnosti (prepis z ORSR):
+{text}
+"""
+
     
-    payload = {
+   
+payload = {
         "model": MODEL_TO_USE,
-        "messages": [{"role": "system", "content": "Si expert na poistenie. Odpovedaj v HTML."},
-                     {"role": "user", "content": prompt}],
+        "messages": [
+            {"role": "system", "content": "Si expert na poistenie. Odpovedaj v HTML."},
+            {"role": "user", "content": prompt}
+        ],
         "temperature": 0.1
     }
-    
+
     try:
         r = requests.post(url, headers=headers, json=payload)
         return r.json()['choices'][0]['message']['content'].replace("```html", "").replace("```", "")
     except:
         return "Chyba pri generovaní analýzy."
+
 
 # --- 5. UI ---
 # Používame session_state pre input
