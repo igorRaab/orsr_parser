@@ -65,7 +65,7 @@ def analyze_data(text):
 Pôsobíš ako elitný senior underwriter špecializovaný na poistenie všeobecnej zodpovednosti podnikateľov v slovenskom poistnom, právnom a trhovom prostredí s viac ako 20 rokmi praxe.
 
 Máme interný referenčný zoznam činností s rizikovými triedami (ukážka):
-{reference_summary}
+{reference_table}
 
 
 Tvojou úlohou je detailne vyhodnotiť všetky predmety činností podľa zadaného vstupu.
