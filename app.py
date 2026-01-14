@@ -83,6 +83,7 @@ Analýza predmetov činnosti (prepis z ORSR):
 
     
    
+
 payload = {
         "model": MODEL_TO_USE,
         "messages": [
@@ -97,6 +98,7 @@ payload = {
         return r.json()['choices'][0]['message']['content'].replace("```html", "").replace("```", "")
     except:
         return "Chyba pri generovaní analýzy."
+
 
 
 # --- 5. UI ---
