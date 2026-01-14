@@ -61,28 +61,25 @@ def analyze_data(text):
     url = "https://api.groq.com/openai/v1/chat/completions"
     headers = {"Authorization": f"Bearer {GROQ_API_KEY}", "Content-Type": "application/json"}
  
-prompt = f"""
-Pôsobíš ako elitný senior underwriter špecializovaný na poistenie všeobecnej zodpovednosti podnikateľov v slovenskom poistnom, právnom a trhovom prostredí s viac ako 20 rokmi praxe.
-Máme interný referenčný zoznam činností s rizikovými triedami, ktorý odráža naše pohľady na riziko:
+    prompt = f"""
+    Pôsobíš ako elitný senior underwriter špecializovaný na poistenie všeobecnej zodpovednosti podnikateľov v slovenskom poistnom, právnom a trhovom prostredí s viac ako 20 rokmi praxe.
+    Máme interný referenčný zoznam činností s rizikovými triedami, ktorý odráža naše pohľady na riziko:
 
-{reference_table}
+    {reference_table}
 
-Tvojou úlohou je detailne vyhodnotiť všetky predmety činností podľa zadaného vstupu.
-Pravidlá analýzy:
-Pre každý jednotlivý predmet podnikania vyhodnoť samostatne podľa nasledujúcich polí:
-1. Činnosť (pôvodný text).
-2. Rizikový Rating (0–100). Stupnica: 0–25 nízke riziko, 26–50 stredné riziko, 51–75 vysoké riziko, 76–100 kritické riziko.
-3. Kľúčové poistné nebezpečenstvo (stručne, fakticky).
-4. Typ rizika (vyber jeden a prelož do slovenčiny: Premises / Operations / Product / Professional / Environmental / Contractual / Property Damage to Third Party / Bodily Injury / Financial Loss).
+    Tvojou úlohou je detailne vyhodnotiť všetky predmety činností podľa zadaného vstupu.
+    Pravidlá analýzy:
+    Pre každý jednotlivý predmet podnikania vyhodnoť samostatne podľa nasledujúcich polí:
+    1. Činnosť (pôvodný text).
+    2. Rizikový Rating (0–100). Stupnica: 0–25 nízke riziko, 26–50 stredné riziko, 51–75 vysoké riziko, 76–100 kritické riziko.
+    3. Kľúčové poistné nebezpečenstvo (stručne, fakticky).
+    4. Typ rizika (vyber jeden a prelož do slovenčiny: Premises / Operations / Product / Professional / Environmental / Contractual / Property Damage to Third Party / Bodily Injury / Financial Loss).
 
-Formát výstupu: Vráť výstup ako formátovanú HTML tabuľku.
+    Formát výstupu: Vráť výstup ako formátovanú HTML tabuľku.
 
-Analýza predmetov činnosti (prepis z ORSR):
-{text}
-"""
-
-    
-   
+    Analýza predmetov činnosti (prepis z ORSR):
+    {text}
+    """
 
 payload = {
         "model": MODEL_TO_USE,
@@ -98,8 +95,6 @@ payload = {
         return r.json()['choices'][0]['message']['content'].replace("```html", "").replace("```", "")
     except:
         return "Chyba pri generovaní analýzy."
-
-
 
 # --- 5. UI ---
 # Používame session_state pre input
